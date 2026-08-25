@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "../components/ProjectCard.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+
+const featuredProjects = (await getCollection("projects"))
+  .filter((project) => !project.data.draft && project.data.featured)
+  .sort((a, b) => a.data.order - b.data.order);
+---
+
+<BaseLayout
+  title="Atanas Delevski"
+  description="Selected software projects and technical writing by Atanas Delevski."
+>
+  <section class="hero">
+    <p class="eyebrow">Quantitative developer</p>
+    <h1>Selected software projects and technical writing.</h1>
+    <p class="lede">
+      A concise index of public work in optimization, quantitative
+      experimentation, systems, and developer tooling.
+    </p>
+  </section>
+
+  <section aria-labelledby="featured-projects">
+    <div class="section-heading">
+      <h2 id="featured-projects">Featured project</h2>
+      <a href="/projects/">View all projects</a>
+    </div>
+    <div class="project-list">
+      {featuredProjects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
+</BaseLayout>

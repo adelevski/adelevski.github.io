@@ -1,0 +1,30 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "../../components/ProjectCard.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const projects = (await getCollection("projects"))
+  .filter((project) => !project.data.draft)
+  .sort(
+    (a, b) =>
+      a.data.order - b.data.order || a.data.title.localeCompare(b.data.title),
+  );
+---
+
+<BaseLayout
+  title="Projects"
+  description="Selected software projects by Atanas Delevski."
+>
+  <header class="page-header">
+    <p class="eyebrow">Projects</p>
+    <h1>Selected work</h1>
+    <p>
+      Repositories are the canonical source for technical detail and current
+      project status.
+    </p>
+  </header>
+
+  <div class="project-list">
+    {projects.map((project) => <ProjectCard project={project} />)}
+  </div>
+</BaseLayout>
