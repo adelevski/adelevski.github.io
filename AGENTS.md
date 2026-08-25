@@ -1,0 +1,3 @@
+- Read `src/pages/principles.md` before changing the site's public-good framing, project philosophy, or related editorial content.
+- Treat those principles as provisional but canonical. Do not silently rewrite, expand, or duplicate them.
+- Keep current implementation, active experiments, and future vision clearly separated in public claims.

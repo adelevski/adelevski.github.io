@@ -198,12 +198,35 @@ main > section + section {
   margin-top: 2.5rem;
 }
 
+.content--page {
+  margin-top: 0;
+}
+
 .content h2 {
   margin-top: 2.5rem;
 }
 
+.content blockquote {
+  margin: 0 0 2rem;
+  padding-left: 1rem;
+  border-left: 3px solid #d9852f;
+  color: #47505a;
+}
+
 .content li + li {
   margin-top: 0.5rem;
+}
+
+.principles-page ol {
+  padding-left: 1.5rem;
+}
+
+.principles-page li {
+  padding-left: 0.4rem;
+}
+
+.principles-page li + li {
+  margin-top: 1.25rem;
 }
 
 .empty-state {
@@ -266,7 +289,8 @@ main > section + section {
   .page-header > p:last-child,
   .project-card p,
   .article-list time,
-  .prose time {
+  .prose time,
+  .content blockquote {
     color: #b7c0c8;
   }
 
