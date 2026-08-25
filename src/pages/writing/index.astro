@@ -1,0 +1,47 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const articles = (await getCollection("writing"))
+  .filter((article) => !article.data.draft)
+  .sort(
+    (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
+  );
+---
+
+<BaseLayout title="Writing" description="Technical writing by Atanas Delevski.">
+  <header class="page-header">
+    <p class="eyebrow">Writing</p>
+    <h1>Technical notes</h1>
+  </header>
+
+  {
+    articles.length === 0 ? (
+      <p class="empty-state">
+        No articles published yet. Technical notes will appear here when
+        projects have results worth documenting.
+      </p>
+    ) : (
+      <ol class="article-list">
+        {articles.map((article) => (
+          <li>
+            <article>
+              <h2>
+                <a href={`/writing/${article.id}/`}>{article.data.title}</a>
+              </h2>
+              <p>{article.data.summary}</p>
+              <time datetime={article.data.publishedDate.toISOString()}>
+                {article.data.publishedDate.toLocaleDateString("en-US", {
+                  year: "numeric",
+                  month: "long",
+                  day: "numeric",
+                  timeZone: "UTC",
+                })}
+              </time>
+            </article>
+          </li>
+        ))}
+      </ol>
+    )
+  }
+</BaseLayout>
