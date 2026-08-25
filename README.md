@@ -27,6 +27,7 @@ npm run verify       # all of the above
 
 - Add project records to `src/content/projects/`.
 - Add technical articles to `src/content/writing/` only when there is substantive material to publish.
+- Keep the permanent public-good principles in `src/pages/principles.md`.
 - Keep source repositories canonical; portfolio records should summarize and link rather than duplicate project documentation.
 - Set `draft: true` in frontmatter to exclude an entry from generated pages.
 
