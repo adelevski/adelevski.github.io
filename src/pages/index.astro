@@ -6,6 +6,12 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 const featuredProjects = (await getCollection("projects"))
   .filter((project) => !project.data.draft && project.data.featured)
   .sort((a, b) => a.data.order - b.data.order);
+const latestWriting = (await getCollection("writing"))
+  .filter((article) => !article.data.draft)
+  .sort(
+    (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
+  )
+  .slice(0, 3);
 ---
 
 <BaseLayout
@@ -30,4 +36,22 @@ const featuredProjects = (await getCollection("projects"))
       {featuredProjects.map((project) => <ProjectCard project={project} />)}
     </div>
   </section>
+
+  {
+    latestWriting.length > 0 && (
+      <section aria-labelledby="latest-writing">
+        <div class="section-heading">
+          <h2 id="latest-writing">Latest writing</h2>
+          <a href="/writing/">View all writing</a>
+        </div>
+        <ol class="article-list article-list--compact">
+          {latestWriting.map((article) => (
+            <li>
+              <a href={`/writing/${article.id}/`}>{article.data.title}</a>
+            </li>
+          ))}
+        </ol>
+      </section>
+    )
+  }
 </BaseLayout>

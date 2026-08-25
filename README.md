@@ -27,11 +27,14 @@ npm run verify       # all of the above
 
 - Add project records to `src/content/projects/`.
 - Add technical articles to `src/content/writing/` only when there is substantive material to publish.
+- Set an article's optional `project` field to a project ID to create title-only cross-links.
 - Keep the permanent public-good principles in `src/pages/principles.md`.
 - Keep source repositories canonical; portfolio records should summarize and link rather than duplicate project documentation.
 - Set `draft: true` in frontmatter to exclude an entry from generated pages.
 
 Schemas live in `src/content.config.ts`. A production build fails when frontmatter does not match them.
+
+Published writing also appears in `/rss.xml`. Site-wide social previews use `public/og.png`; project and article pages omit inherited images unless they gain their own relevant visual.
 
 ## Deployment
 

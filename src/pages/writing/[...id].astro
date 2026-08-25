@@ -1,5 +1,10 @@
 ---
-import { getCollection, render, type CollectionEntry } from "astro:content";
+import {
+  getCollection,
+  getEntry,
+  render,
+  type CollectionEntry,
+} from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -19,13 +24,20 @@ interface Props {
 
 const { article } = Astro.props;
 const { Content } = await render(article);
+const project = article.data.project
+  ? await getEntry("projects", article.data.project)
+  : undefined;
 ---
 
-<BaseLayout title={article.data.title} description={article.data.summary}>
+<BaseLayout
+  title={article.data.title}
+  description={article.data.summary}
+  pageType="article"
+  socialImage={null}
+>
   <article class="prose">
     <p class="eyebrow">Writing</p>
     <h1>{article.data.title}</h1>
-    <p class="lede">{article.data.summary}</p>
     <time datetime={article.data.publishedDate.toISOString()}>
       {
         article.data.publishedDate.toLocaleDateString("en-US", {
@@ -36,6 +48,13 @@ const { Content } = await render(article);
         })
       }
     </time>
+    {
+      project && (
+        <p class="article-context">
+          Project: <a href={`/projects/${project.id}/`}>{project.data.title}</a>
+        </p>
+      )
+    }
     <div class="content">
       <Content />
     </div>
