@@ -24,6 +24,7 @@ const writing = defineCollection({
     publishedDate: z.coerce.date(),
     updatedDate: z.coerce.date().optional(),
     topics: z.array(z.string()).default([]),
+    project: z.string().optional(),
     draft: z.boolean().default(false),
   }),
 });

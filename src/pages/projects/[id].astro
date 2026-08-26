@@ -19,13 +19,23 @@ interface Props {
 
 const { project } = Astro.props;
 const { Content } = await render(project);
+const relatedWriting = (await getCollection("writing"))
+  .filter(
+    (article) => !article.data.draft && article.data.project === project.id,
+  )
+  .sort(
+    (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
+  );
 ---
 
-<BaseLayout title={project.data.title} description={project.data.summary}>
+<BaseLayout
+  title={project.data.title}
+  description={project.data.summary}
+  socialImage={null}
+>
   <article class="prose">
     <p class="eyebrow">Project · {project.data.status}</p>
     <h1>{project.data.title}</h1>
-    <p class="lede">{project.data.summary}</p>
 
     {
       project.data.technologies.length > 0 && (
@@ -40,6 +50,21 @@ const { Content } = await render(project);
     <div class="content">
       <Content />
     </div>
+
+    {
+      relatedWriting.length > 0 && (
+        <section class="related-content" aria-labelledby="related-writing">
+          <h2 id="related-writing">Related writing</h2>
+          <ul>
+            {relatedWriting.map((article) => (
+              <li>
+                <a href={`/writing/${article.id}/`}>{article.data.title}</a>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )
+    }
 
     {
       project.data.repository && (

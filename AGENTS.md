@@ -1,3 +1,5 @@
 - Read `src/pages/principles.md` before changing the site's public-good framing, project philosophy, or related editorial content.
 - Treat those principles as provisional but canonical. Do not silently rewrite, expand, or duplicate them.
 - Keep current implementation, active experiments, and future vision clearly separated in public claims.
+- Keep project entries focused on scope and boundaries; keep articles focused on one technical argument. Connect them with `project` frontmatter instead of repeating prose.
+- Never commit working drafts to this public repository. Add writing only after explicit publication approval.

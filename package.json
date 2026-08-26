@@ -17,6 +17,7 @@
     "verify": "npm run check && npm run format:check && npm run build"
   },
   "dependencies": {
+    "@astrojs/rss": "4.0.19",
     "astro": "7.2.6"
   },
   "devDependencies": {

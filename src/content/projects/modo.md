@@ -1,6 +1,6 @@
 ---
 title: Multi Origin Distance Optimizer (MODO)
-summary: A Python library for computing WGS84 geographic medians and minimax centers for equally weighted coordinate sets.
+summary: A headless Python engine for finding balanced centers among multiple coordinates.
 status: In development
 technologies:
   - Python
@@ -12,9 +12,20 @@ order: 1
 draft: false
 ---
 
-MODO implements two geographic center calculations for sets of coordinates:
+## Role
 
-- a geographic median that minimizes the sum of distances to all input points;
-- a minimax center that minimizes the greatest distance to any input point.
+MODO is the public computation layer for multi-origin meeting tools. It is designed to remain useful without a particular interface, service, or venue category.
 
-The repository is the canonical source for implementation details, tests, experiments, and current status.
+## Current boundary
+
+The repository publishes a Python library, tests, and a versioned technical record. It does not ship a graphical interface, accounts, telemetry, geocoding, venue data, or hosted infrastructure.
+
+That boundary keeps the optimization logic reusable and independently testable. Input collection, routing providers, maps, and interaction design belong to applications built around it.
+
+## Product separation
+
+Fairway is the likely first product wrapper. It may add address entry, road travel, maps, and venue search while MODO remains a headless engine. The two projects should share a contract, not a user interface or deployment architecture.
+
+## Standard of evidence
+
+The changelog distinguishes released behavior from experiments. New capabilities should enter the public contract only with reproducible measurements, documented limitations, and tests that do not depend on private locations or local data.
