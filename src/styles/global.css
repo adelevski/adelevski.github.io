@@ -295,6 +295,18 @@ main > section + section {
   list-style: none;
 }
 
+main.writing-index {
+  padding-top: 0;
+}
+
+.writing-index .article-list {
+  margin-block: 0;
+}
+
+.writing-index .article-list li:first-child {
+  border-top: 0;
+}
+
 .article-list li {
   padding-block: 1.5rem;
   border-top: 1px solid #d8d7d2;

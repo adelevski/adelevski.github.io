@@ -9,7 +9,11 @@ const articles = (await getCollection("writing"))
   );
 ---
 
-<BaseLayout title="Writing" description="Technical writing by Atanas Delevski.">
+<BaseLayout
+  title="Writing"
+  description="Technical writing by Atanas Delevski."
+  mainClass="writing-index"
+>
   <h1 class="visually-hidden">Writing</h1>
 
   {

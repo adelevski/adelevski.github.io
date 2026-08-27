@@ -7,6 +7,7 @@ interface Props {
   pageType?: "website" | "article";
   socialImage?: string | null;
   socialImageAlt?: string;
+  mainClass?: string;
 }
 
 const {
@@ -15,6 +16,7 @@ const {
   pageType = "website",
   socialImage = "/og.png",
   socialImageAlt = "Atanas Delevski - Quantitative developer - Software projects and technical writing",
+  mainClass,
 } = Astro.props;
 const pageTitle =
   title === "Atanas Delevski" ? title : `${title} | Atanas Delevski`;
@@ -95,7 +97,7 @@ const isCurrent = (href: string) =>
         </ul>
       </nav>
     </header>
-    <main>
+    <main class={mainClass}>
       <slot />
     </main>
     <footer class="site-footer">
