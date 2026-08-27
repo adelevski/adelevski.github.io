@@ -24,6 +24,18 @@ body {
   line-height: 1.65;
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 a {
   color: #174f78;
   text-underline-offset: 0.18em;
@@ -111,10 +123,6 @@ main > section + section {
   margin-top: clamp(5rem, 12vw, 8rem);
 }
 
-.hero {
-  max-width: 56rem;
-}
-
 .eyebrow {
   margin-bottom: 0.75rem;
   color: #6a441e;
@@ -122,13 +130,6 @@ main > section + section {
   font-weight: 750;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-}
-
-.lede,
-.page-header > p:last-child {
-  max-width: 44rem;
-  color: #47505a;
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
 }
 
 .section-heading {
@@ -181,13 +182,8 @@ main > section + section {
   white-space: nowrap;
 }
 
-.page-header,
 .prose {
   max-width: 48rem;
-}
-
-.page-header {
-  margin-bottom: 3rem;
 }
 
 .prose .tag-list {
@@ -236,6 +232,46 @@ main > section + section {
   margin-top: 0.5rem;
 }
 
+.project-illustration {
+  display: block;
+  width: 100%;
+  margin-block: 2rem 2.5rem;
+  border: 1px solid #d8d7d2;
+  border-radius: 0.4rem;
+  color: #7a848d;
+  background: #f1efe9;
+}
+
+.project-illustration__globe,
+.project-illustration__grid,
+.project-illustration__route {
+  fill: none;
+  stroke: currentColor;
+  stroke-linecap: round;
+}
+
+.project-illustration__globe {
+  stroke-width: 3;
+}
+
+.project-illustration__grid {
+  stroke-width: 2;
+  opacity: 0.55;
+}
+
+.project-illustration__route {
+  stroke: #9f6229;
+  stroke-width: 3;
+}
+
+.project-illustration__point {
+  fill: currentColor;
+}
+
+.project-illustration__center {
+  fill: #d9852f;
+}
+
 .principles-page ol {
   padding-left: 1.5rem;
 }
@@ -246,13 +282,6 @@ main > section + section {
 
 .principles-page li + li {
   margin-top: 1.25rem;
-}
-
-.empty-state {
-  max-width: 42rem;
-  padding: 1.5rem;
-  border-left: 3px solid #d9852f;
-  background: #f1efe9;
 }
 
 .article-list {
@@ -330,8 +359,6 @@ main > section + section {
   }
 
   nav a,
-  .lede,
-  .page-header > p:last-child,
   .project-card p,
   .article-list time,
   .prose time,
@@ -358,13 +385,19 @@ main > section + section {
     background: #182029;
   }
 
+  .project-illustration {
+    border-color: #39434d;
+    color: #7f8b96;
+    background: #182029;
+  }
+
+  .project-illustration__route {
+    stroke: #efb371;
+  }
+
   .status,
   .tag-list li {
     border-color: #58636e;
     color: #cad1d8;
-  }
-
-  .empty-state {
-    background: #1b252e;
   }
 }

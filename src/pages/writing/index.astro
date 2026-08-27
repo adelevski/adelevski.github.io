@@ -10,17 +10,11 @@ const articles = (await getCollection("writing"))
 ---
 
 <BaseLayout title="Writing" description="Technical writing by Atanas Delevski.">
-  <header class="page-header">
-    <p class="eyebrow">Writing</p>
-    <h1>Technical notes</h1>
-  </header>
+  <h1 class="visually-hidden">Writing</h1>
 
   {
     articles.length === 0 ? (
-      <p class="empty-state">
-        No articles published yet. Technical notes will appear here when
-        projects have results worth documenting.
-      </p>
+      <p>Nothing published yet.</p>
     ) : (
       <ol class="article-list">
         {articles.map((article) => (
