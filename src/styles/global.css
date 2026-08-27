@@ -250,6 +250,7 @@ main > section + section {
 
 .project-illustration__globe,
 .project-illustration__grid,
+.project-illustration__formation,
 .project-illustration__route {
   fill: none;
   stroke: currentColor;
@@ -263,6 +264,10 @@ main > section + section {
 .project-illustration__grid {
   stroke-width: 2;
   opacity: 0.55;
+}
+
+.project-illustration__formation {
+  stroke-width: 3;
 }
 
 .project-illustration__route {
