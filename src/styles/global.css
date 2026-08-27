@@ -341,6 +341,10 @@ main.writing-index {
   padding-block: 0.9rem;
 }
 
+.article-list--compact li:first-child {
+  border-top: 0;
+}
+
 .article-list time,
 .prose time {
   color: #68717a;

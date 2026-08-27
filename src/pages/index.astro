@@ -24,7 +24,6 @@ const latestWriting = (await getCollection("writing"))
     <section aria-labelledby="featured-projects">
       <div class="section-heading">
         <h2 id="featured-projects">Featured projects</h2>
-        <a href="/projects/">View all projects</a>
       </div>
       <div class="project-list">
         {featuredProjects.map((project) => <ProjectCard project={project} />)}
@@ -36,7 +35,6 @@ const latestWriting = (await getCollection("writing"))
         <section aria-labelledby="latest-writing">
           <div class="section-heading">
             <h2 id="latest-writing">Latest writing</h2>
-            <a href="/writing/">View all writing</a>
           </div>
           <ol class="article-list article-list--compact">
             {latestWriting.map((article) => (
