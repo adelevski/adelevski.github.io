@@ -2,13 +2,10 @@
 layout: ../layouts/ProsePageLayout.astro
 title: Principles for Digital Public Goods
 description: Provisional working principles for building and operating useful public software.
-eyebrow: Principles
 pageClass: principles-page
 ---
 
-# Principles for Digital Public Goods
-
-> Provisional working principles.
+<h1 class="visually-hidden">Principles</h1>
 
 1. **Public benefit comes first**  
    Build tools that solve real problems without optimizing for engagement, lock-in, or profit extraction.

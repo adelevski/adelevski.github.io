@@ -12,20 +12,15 @@ order: 1
 draft: false
 ---
 
-## Role
+MODO is the public computation layer for multi-origin meeting tools.
 
-MODO is the public computation layer for multi-origin meeting tools. It is designed to remain useful without a particular interface, service, or venue category.
-
-## Current boundary
-
-The repository publishes a Python library, tests, and a versioned technical record. It does not ship a graphical interface, accounts, telemetry, geocoding, venue data, or hosted infrastructure.
-
-That boundary keeps the optimization logic reusable and independently testable. Input collection, routing providers, maps, and interaction design belong to applications built around it.
-
-## Product separation
-
-Fairway is the likely first product wrapper. It may add address entry, road travel, maps, and venue search while MODO remains a headless engine. The two projects should share a contract, not a user interface or deployment architecture.
-
-## Standard of evidence
-
-The changelog distinguishes released behavior from experiments. New capabilities should enter the public contract only with reproducible measurements, documented limitations, and tests that do not depend on private locations or local data.
+<svg class="project-illustration" viewBox="0 0 640 300" role="img" aria-labelledby="modo-illustration-title">
+  <title id="modo-illustration-title">Abstract globe with several locations connected to a center</title>
+  <circle class="project-illustration__globe" cx="320" cy="150" r="92" />
+  <ellipse class="project-illustration__grid" cx="320" cy="150" rx="43" ry="92" />
+  <ellipse class="project-illustration__grid" cx="320" cy="150" rx="92" ry="35" />
+  <path class="project-illustration__route" d="M270 122 Q300 178 334 161 T378 108" />
+  <circle class="project-illustration__point" cx="270" cy="122" r="7" />
+  <circle class="project-illustration__center" cx="334" cy="161" r="8" />
+  <circle class="project-illustration__point" cx="378" cy="108" r="7" />
+</svg>

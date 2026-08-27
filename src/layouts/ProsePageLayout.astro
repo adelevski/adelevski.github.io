@@ -5,7 +5,7 @@ interface Props {
   frontmatter: {
     title: string;
     description: string;
-    eyebrow: string;
+    eyebrow?: string;
     pageClass?: string;
   };
 }
@@ -15,7 +15,7 @@ const { frontmatter } = Astro.props;
 
 <BaseLayout title={frontmatter.title} description={frontmatter.description}>
   <article class:list={["prose", frontmatter.pageClass]}>
-    <p class="eyebrow">{frontmatter.eyebrow}</p>
+    {frontmatter.eyebrow && <p class="eyebrow">{frontmatter.eyebrow}</p>}
     <div class="content content--page">
       <slot />
     </div>

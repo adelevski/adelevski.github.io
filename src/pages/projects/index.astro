@@ -15,14 +15,7 @@ const projects = (await getCollection("projects"))
   title="Projects"
   description="Selected software projects by Atanas Delevski."
 >
-  <header class="page-header">
-    <p class="eyebrow">Projects</p>
-    <h1>Selected work</h1>
-    <p>
-      Repositories are the canonical source for technical detail and current
-      project status.
-    </p>
-  </header>
+  <h1 class="visually-hidden">Projects</h1>
 
   <div class="project-list">
     {projects.map((project) => <ProjectCard project={project} />)}

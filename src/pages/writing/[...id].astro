@@ -5,6 +5,7 @@ import {
   render,
   type CollectionEntry,
 } from "astro:content";
+import "katex/dist/katex.min.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 
 export async function getStaticPaths() {
@@ -36,7 +37,6 @@ const project = article.data.project
   socialImage={null}
 >
   <article class="prose">
-    <p class="eyebrow">Writing</p>
     <h1>{article.data.title}</h1>
     <time datetime={article.data.publishedDate.toISOString()}>
       {
