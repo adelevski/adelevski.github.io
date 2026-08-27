@@ -232,6 +232,12 @@ main > section + section {
   margin-top: 0.5rem;
 }
 
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding-block: 0.25rem;
+}
+
 .project-illustration {
   display: block;
   width: 100%;
