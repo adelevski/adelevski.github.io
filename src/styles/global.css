@@ -1,15 +1,16 @@
 :root {
+  color-scheme: dark;
   font-family:
     "Helvetica Neue", Helvetica, Arial, ui-sans-serif, system-ui, sans-serif;
-  color: #17201f;
-  background: #f6f7f3;
+  color: #f2f5f5;
+  background: #0b0e0f;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
-  --ink: #17201f;
-  --muted: #66706c;
-  --line: #d9ded9;
-  --ice: #dceee9;
-  --accent: #166c5c;
+  --ink: #f2f5f5;
+  --muted: #9aa7aa;
+  --line: #293235;
+  --surface: #151d20;
+  --accent: #9fb0b7;
 }
 
 * {
@@ -28,8 +29,8 @@ body {
 }
 
 ::selection {
-  color: var(--ink);
-  background: #bfe0d6;
+  color: #0b0e0f;
+  background: var(--accent);
 }
 
 .visually-hidden {
@@ -46,7 +47,7 @@ body {
 
 a {
   color: inherit;
-  text-decoration-color: #aab4b0;
+  text-decoration-color: #59676c;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.2em;
 }
@@ -108,13 +109,11 @@ main {
   text-decoration: none;
 }
 
-.site-name::before {
-  width: 0.8rem;
-  height: 0.8rem;
-  border-radius: 999px;
-  background: var(--accent);
-  box-shadow: -0.28rem -0.24rem 0 -0.18rem #8dbfb2;
-  content: "";
+.site-logo {
+  display: block;
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
 }
 
 nav ul {
@@ -190,7 +189,7 @@ main {
 }
 
 .project-card__link:hover {
-  background: var(--ice);
+  background: var(--surface);
 }
 
 .project-card__link:hover::before {
@@ -210,7 +209,7 @@ main {
 }
 
 .project-card__link:hover p {
-  color: #3f4a46;
+  color: #c8d0d2;
 }
 
 .prose {
@@ -253,7 +252,7 @@ main {
 }
 
 .content {
-  color: #33403c;
+  color: #c8d0d2;
 }
 
 .content p,

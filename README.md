@@ -1,6 +1,6 @@
 # adelevski.github.io
 
-Source for [Snowball](https://adelevski.github.io), a founder-led collection of opinionated software and related technical writing.
+Source for [snowball](https://adelevski.github.io), a founder-led collection of opinionated software and related technical writing.
 
 The site is built with Astro and Markdown content collections, contains no client-side JavaScript, and deploys to GitHub Pages from `main`.
 

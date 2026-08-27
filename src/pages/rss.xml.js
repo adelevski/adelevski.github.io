@@ -9,8 +9,8 @@ export async function GET(context) {
     );
 
   return rss({
-    title: "Snowball writing",
-    description: "Technical notes from Snowball projects.",
+    title: "snowball writing",
+    description: "Technical notes from snowball projects.",
     site: context.site,
     items: articles.map((article) => ({
       title: article.data.title,
