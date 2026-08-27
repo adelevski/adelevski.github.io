@@ -123,6 +123,13 @@ main > section + section {
   margin-top: clamp(5rem, 12vw, 8rem);
 }
 
+.home-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.7fr) minmax(18rem, 1fr);
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: start;
+}
+
 .eyebrow {
   margin-bottom: 0.75rem;
   color: #6a441e;
@@ -186,8 +193,17 @@ main > section + section {
   max-width: 48rem;
 }
 
-.prose .tag-list {
+.project-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.75rem 1rem;
   margin-block: 1.5rem 2.5rem;
+}
+
+.project-repository {
+  font-size: 0.9rem;
+  font-weight: 650;
 }
 
 .content {
@@ -364,6 +380,16 @@ main.writing-index {
   .project-card__heading {
     align-items: flex-start;
     flex-direction: column;
+  }
+}
+
+@media (max-width: 56rem) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-grid > section + section {
+    margin-top: clamp(5rem, 12vw, 8rem);
   }
 }
 

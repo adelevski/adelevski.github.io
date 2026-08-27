@@ -20,31 +20,33 @@ const latestWriting = (await getCollection("writing"))
 >
   <h1 class="visually-hidden">Atanas Delevski</h1>
 
-  <section aria-labelledby="featured-projects">
-    <div class="section-heading">
-      <h2 id="featured-projects">Featured projects</h2>
-      <a href="/projects/">View all projects</a>
-    </div>
-    <div class="project-list">
-      {featuredProjects.map((project) => <ProjectCard project={project} />)}
-    </div>
-  </section>
+  <div class="home-grid">
+    <section aria-labelledby="featured-projects">
+      <div class="section-heading">
+        <h2 id="featured-projects">Featured projects</h2>
+        <a href="/projects/">View all projects</a>
+      </div>
+      <div class="project-list">
+        {featuredProjects.map((project) => <ProjectCard project={project} />)}
+      </div>
+    </section>
 
-  {
-    latestWriting.length > 0 && (
-      <section aria-labelledby="latest-writing">
-        <div class="section-heading">
-          <h2 id="latest-writing">Latest writing</h2>
-          <a href="/writing/">View all writing</a>
-        </div>
-        <ol class="article-list article-list--compact">
-          {latestWriting.map((article) => (
-            <li>
-              <a href={`/writing/${article.id}/`}>{article.data.title}</a>
-            </li>
-          ))}
-        </ol>
-      </section>
-    )
-  }
+    {
+      latestWriting.length > 0 && (
+        <section aria-labelledby="latest-writing">
+          <div class="section-heading">
+            <h2 id="latest-writing">Latest writing</h2>
+            <a href="/writing/">View all writing</a>
+          </div>
+          <ol class="article-list article-list--compact">
+            {latestWriting.map((article) => (
+              <li>
+                <a href={`/writing/${article.id}/`}>{article.data.title}</a>
+              </li>
+            ))}
+          </ol>
+        </section>
+      )
+    }
+  </div>
 </BaseLayout>

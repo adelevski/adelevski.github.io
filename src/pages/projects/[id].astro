@@ -37,12 +37,25 @@ const relatedWriting = (await getCollection("writing"))
     <h1>{project.data.title}</h1>
 
     {
-      project.data.technologies.length > 0 && (
-        <ul class="tag-list" aria-label="Technologies">
-          {project.data.technologies.map((technology) => (
-            <li>{technology}</li>
-          ))}
-        </ul>
+      (project.data.technologies.length > 0 || project.data.repository) && (
+        <div class="project-meta">
+          {project.data.technologies.length > 0 && (
+            <ul class="tag-list" aria-label="Technologies">
+              {project.data.technologies.map((technology) => (
+                <li>{technology}</li>
+              ))}
+            </ul>
+          )}
+          {project.data.repository && (
+            <a
+              class="project-repository"
+              href={project.data.repository}
+              aria-label={`${project.data.title} repository`}
+            >
+              Repo
+            </a>
+          )}
+        </div>
       )
     }
 
@@ -62,14 +75,6 @@ const relatedWriting = (await getCollection("writing"))
             ))}
           </ul>
         </section>
-      )
-    }
-
-    {
-      project.data.repository && (
-        <p>
-          <a href={project.data.repository}>View the project repository</a>
-        </p>
       )
     }
   </article>
