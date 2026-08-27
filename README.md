@@ -1,6 +1,6 @@
 # adelevski.github.io
 
-Source for [adelevski.github.io](https://adelevski.github.io), a small portfolio and technical-writing site.
+Source for [Snowball](https://adelevski.github.io), a founder-led collection of opinionated software and related technical writing.
 
 The site is built with Astro and Markdown content collections, contains no client-side JavaScript, and deploys to GitHub Pages from `main`.
 
@@ -25,11 +25,11 @@ npm run verify       # all of the above
 
 ## Content
 
-- Add project records to `src/content/projects/`.
+- Add a project record to `src/content/projects/` when its public summary is ready. Include `repository` only when the source is publicly accessible.
 - Add technical articles to `src/content/writing/` only when there is substantive material to publish.
 - Keep working drafts outside this public repository; copy in only publication-ready writing.
 - Set an article's optional `project` field to a project ID to create title-only cross-links.
-- Keep the permanent public-good principles in `src/pages/principles.md`.
+- Keep the provisional, canonical public-good principles in `src/pages/principles.md`.
 - Keep source repositories canonical; portfolio records should summarize and link rather than duplicate project documentation.
 - Set `draft: true` in frontmatter to exclude an entry from generated pages.
 
@@ -39,6 +39,6 @@ Published writing also appears in `/rss.xml`. Site-wide social previews use `pub
 
 ## Deployment
 
-`.github/workflows/deploy.yml` verifies, builds, and deploys the site after a push to `main`. In the GitHub repository settings, **Pages → Build and deployment → Source** must be set to **GitHub Actions**.
+`.github/workflows/deploy.yml` verifies, builds, and deploys the site after a push to `main`. GitHub Pages keeps the initial hosting cost at zero for this public repository. In the repository settings, **Pages → Build and deployment → Source** must be set to **GitHub Actions**.
 
 The configuration targets the user site at `https://adelevski.github.io`, so no Astro `base` path is required. Custom-domain configuration is intentionally deferred.

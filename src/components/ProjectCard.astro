@@ -9,18 +9,8 @@ const { project } = Astro.props;
 ---
 
 <article class="project-card">
-  <div class="project-card__heading">
-    <h2><a href={`/projects/${project.id}/`}>{project.data.title}</a></h2>
-    <span class="status">{project.data.status}</span>
-  </div>
-  <p>{project.data.summary}</p>
-  {
-    project.data.technologies.length > 0 && (
-      <ul class="tag-list" aria-label="Technologies">
-        {project.data.technologies.map((technology) => (
-          <li>{technology}</li>
-        ))}
-      </ul>
-    )
-  }
+  <a class="project-card__link" href={`/projects/${project.id}/`}>
+    <h2>{project.data.title}</h2>
+    <p>{project.data.summary}</p>
+  </a>
 </article>

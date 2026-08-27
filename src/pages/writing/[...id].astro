@@ -51,7 +51,7 @@ const project = article.data.project
     {
       project && (
         <p class="article-context">
-          Project: <a href={`/projects/${project.id}/`}>{project.data.title}</a>
+          <a href={project.data.repository}>{project.data.title}</a>
         </p>
       )
     }

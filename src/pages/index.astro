@@ -3,48 +3,22 @@ import { getCollection } from "astro:content";
 import ProjectCard from "../components/ProjectCard.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 
-const featuredProjects = (await getCollection("projects"))
-  .filter((project) => !project.data.draft && project.data.featured)
-  .sort((a, b) => a.data.order - b.data.order);
-const latestWriting = (await getCollection("writing"))
-  .filter((article) => !article.data.draft)
-  .sort(
-    (a, b) => b.data.publishedDate.valueOf() - a.data.publishedDate.valueOf(),
-  )
-  .slice(0, 3);
+const projects = (await getCollection("projects"))
+  .filter((project) => !project.data.draft)
+  .sort((a, b) => a.data.title.localeCompare(b.data.title));
 ---
 
 <BaseLayout
-  title="Atanas Delevski"
-  description="Selected software projects and technical writing by Atanas Delevski."
+  title="Snowball"
+  description="Opinionated software by Atanas Delevski."
 >
-  <h1 class="visually-hidden">Atanas Delevski</h1>
+  <h1 class="visually-hidden">Snowball</h1>
+  <p class="home-intro">Opinionated software by Atanas Delevski.</p>
 
-  <div class="home-grid">
-    <section aria-labelledby="featured-projects">
-      <div class="section-heading">
-        <h2 id="featured-projects">Featured projects</h2>
-      </div>
-      <div class="project-list">
-        {featuredProjects.map((project) => <ProjectCard project={project} />)}
-      </div>
-    </section>
-
-    {
-      latestWriting.length > 0 && (
-        <section aria-labelledby="latest-writing">
-          <div class="section-heading">
-            <h2 id="latest-writing">Latest writing</h2>
-          </div>
-          <ol class="article-list article-list--compact">
-            {latestWriting.map((article) => (
-              <li>
-                <a href={`/writing/${article.id}/`}>{article.data.title}</a>
-              </li>
-            ))}
-          </ol>
-        </section>
-      )
-    }
-  </div>
+  <section aria-labelledby="projects-heading">
+    <h2 id="projects-heading" class="visually-hidden">Projects</h2>
+    <div class="project-list">
+      {projects.map((project) => <ProjectCard project={project} />)}
+    </div>
+  </section>
 </BaseLayout>
