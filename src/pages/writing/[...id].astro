@@ -7,6 +7,7 @@ import {
 } from "astro:content";
 import "katex/dist/katex.min.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
+import { projectHref } from "../../lib/projects";
 
 export async function getStaticPaths() {
   const articles = (await getCollection("writing")).filter(
@@ -28,6 +29,10 @@ const { Content } = await render(article);
 const project = article.data.project
   ? await getEntry("projects", article.data.project)
   : undefined;
+const authorFormatter = new Intl.ListFormat("en", {
+  style: "long",
+  type: "conjunction",
+});
 ---
 
 <BaseLayout
@@ -38,20 +43,25 @@ const project = article.data.project
 >
   <article class="prose">
     <h1>{article.data.title}</h1>
-    <time datetime={article.data.publishedDate.toISOString()}>
-      {
-        article.data.publishedDate.toLocaleDateString("en-US", {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-          timeZone: "UTC",
-        })
-      }
-    </time>
+    <p class="article-meta">
+      <time datetime={article.data.publishedDate.toISOString()}>
+        {
+          article.data.publishedDate.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+            timeZone: "UTC",
+          })
+        }
+      </time>
+      <span class="article-meta__authors">
+        {authorFormatter.format(article.data.authors)}
+      </span>
+    </p>
     {
       project && (
         <p class="article-context">
-          <a href={project.data.repository}>{project.data.title}</a>
+          <a href={projectHref(project)}>{project.data.title}</a>
         </p>
       )
     }

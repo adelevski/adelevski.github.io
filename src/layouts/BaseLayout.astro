@@ -15,7 +15,7 @@ const {
   description,
   pageType = "website",
   socialImage = "/og.png",
-  socialImageAlt = "snowball — opinionated software by Atanas Delevski",
+  socialImageAlt = "snowball",
   mainClass,
 } = Astro.props;
 const pageTitle = title === "snowball" ? title : `${title} — snowball`;
@@ -24,7 +24,7 @@ const socialImageUrl = socialImage
   ? new URL(socialImage, Astro.site ?? Astro.url).href
   : undefined;
 const navigation = [
-  { href: "/writing/", label: "Writing" },
+  { href: "/writing/", label: "Blog" },
   { href: "/principles/", label: "Principles" },
 ];
 
@@ -72,7 +72,7 @@ const isCurrent = (href: string) =>
     <link
       rel="alternate"
       type="application/rss+xml"
-      title="snowball writing"
+      title="snowball blog"
       href="/rss.xml"
     />
     <link rel="canonical" href={Astro.url} />

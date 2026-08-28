@@ -26,7 +26,9 @@ npm run verify       # all of the above
 ## Content
 
 - Add a project record to `src/content/projects/` when its public summary is ready. Include `repository` only when the source is publicly accessible.
+- Set an owner-approved project `category` to `dashboard` with a `liveUrl`, or `developer` with a public `repository`. A draft may hold its approved category while waiting for that destination. Unclassified projects stay neutral until a decision arrives.
 - Add technical articles to `src/content/writing/` only when there is substantive material to publish.
+- List every article author in `authors`; the same field supports one or multiple contributors.
 - Keep working drafts outside this public repository; copy in only publication-ready writing.
 - Set an article's optional `project` field to a project ID to create title-only cross-links.
 - Keep the provisional, canonical public-good principles in `src/pages/principles.md`.
