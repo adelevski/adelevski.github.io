@@ -1,6 +1,6 @@
 ---
 title: Sportsbro
-summary: A normalized, multi-sport calendar built from public schedules.
+summary: A sports calendar.
 category: dashboard
 draft: true
 ---
