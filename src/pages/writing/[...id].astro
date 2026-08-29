@@ -1,13 +1,7 @@
 ---
-import {
-  getCollection,
-  getEntry,
-  render,
-  type CollectionEntry,
-} from "astro:content";
+import { getCollection, render, type CollectionEntry } from "astro:content";
 import "katex/dist/katex.min.css";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-import { projectHref } from "../../lib/projects";
 
 export async function getStaticPaths() {
   const articles = (await getCollection("writing")).filter(
@@ -26,9 +20,6 @@ interface Props {
 
 const { article } = Astro.props;
 const { Content } = await render(article);
-const project = article.data.project
-  ? await getEntry("projects", article.data.project)
-  : undefined;
 const authorFormatter = new Intl.ListFormat("en", {
   style: "long",
   type: "conjunction",
@@ -58,13 +49,6 @@ const authorFormatter = new Intl.ListFormat("en", {
         {authorFormatter.format(article.data.authors)}
       </span>
     </p>
-    {
-      project && (
-        <p class="article-context">
-          <a href={projectHref(project)}>{project.data.title}</a>
-        </p>
-      )
-    }
     <div class="content">
       <Content />
     </div>

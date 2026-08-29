@@ -1,56 +1,29 @@
 ---
-import { getCollection } from "astro:content";
-import ProjectCard from "../components/ProjectCard.astro";
+import headshot from "../assets/nas-delevski.jpg";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import { projectCategoryLabels } from "../lib/projects";
-
-const projects = (await getCollection("projects"))
-  .filter((project) => !project.data.draft)
-  .sort((a, b) => a.data.title.localeCompare(b.data.title));
-const hasCompleteClassification = projects.every(
-  (project) => project.data.category,
-);
-const projectGroups = Object.entries(projectCategoryLabels)
-  .map(([category, label]) => ({
-    category,
-    label,
-    projects: projects.filter((project) => project.data.category === category),
-  }))
-  .filter((group) => group.projects.length > 0);
 ---
 
-<BaseLayout title="snowball" description="Founder-led, opinionated software.">
-  <h1 class="visually-hidden">snowball</h1>
-  <p class="home-intro">Founded by Nas Delevski.</p>
-
-  <section aria-labelledby="projects-heading">
-    <h2 id="projects-heading" class="visually-hidden">Projects</h2>
-    {
-      hasCompleteClassification ? (
-        <div class="project-groups">
-          {projectGroups.map((group) => (
-            <section
-              class="project-group"
-              aria-labelledby={`${group.category}-heading`}
-            >
-              <h3 class="project-group__title" id={`${group.category}-heading`}>
-                {group.label}
-              </h3>
-              <div class="project-list">
-                {group.projects.map((project) => (
-                  <ProjectCard project={project} />
-                ))}
-              </div>
-            </section>
-          ))}
-        </div>
-      ) : (
-        <div class="project-list">
-          {projects.map((project) => (
-            <ProjectCard project={project} />
-          ))}
-        </div>
-      )
-    }
+<BaseLayout
+  title="Nas Delevski"
+  description="Nas Delevski is a quantitative developer at S&P Global and the founder of snowball."
+  mainClass="home-page"
+>
+  <section class="profile" aria-labelledby="profile-name">
+    <div class="profile__copy">
+      <h1 id="profile-name">Nas Delevski</h1>
+      <p>
+        I’m a quantitative developer at S&amp;P Global by day and the founder of
+        <a href="https://snowball-projects.github.io">snowball</a>, an
+        open-source software lab, by night. I’m based in Chicago.
+      </p>
+    </div>
+    <img
+      class="profile__photo"
+      src={headshot.src}
+      width="512"
+      height="480"
+      alt="Portrait of Nas Delevski"
+      decoding="async"
+    />
   </section>
 </BaseLayout>
