@@ -9,6 +9,7 @@
   --ink: #f2f5f5;
   --muted: #9aa7aa;
   --line: #293235;
+  --surface: #151d20;
   --accent: #9fb0b7;
 }
 
@@ -32,6 +33,18 @@ body {
 ::selection {
   color: #0b0e0f;
   background: var(--accent);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 a {
@@ -161,28 +174,50 @@ main {
   object-fit: cover;
 }
 
-.writing-index > h1 {
-  margin-bottom: clamp(2.5rem, 6vw, 4.5rem);
+.writing-index {
+  padding-top: clamp(1.25rem, 3vw, 2rem);
+}
+
+.empty-state {
+  margin: 0;
+  color: var(--muted);
 }
 
 .article-list {
+  display: grid;
   max-width: 56rem;
   padding: 0;
   margin: 0;
-  border-top: 1px solid var(--line);
+  gap: clamp(0.75rem, 2vw, 1rem);
   list-style: none;
 }
 
 .article-list li {
-  padding-block: 1.75rem;
-  border-bottom: 1px solid var(--line);
+  margin: 0;
 }
 
-.article-list h2 a {
+.article-pill {
+  display: block;
+  padding: clamp(1.25rem, 3vw, 1.75rem) clamp(1.4rem, 4vw, 2.2rem);
+  border: 1px solid var(--line);
+  border-radius: 1.5rem;
+  background: #101416;
   text-decoration: none;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease;
 }
 
-.article-list p {
+.article-pill:hover {
+  border-color: #536269;
+  background: var(--surface);
+}
+
+.article-pill:focus-visible {
+  border-radius: 1.5rem;
+}
+
+.article-list .article-summary {
   max-width: 55ch;
   margin: 0.75rem 0;
   color: var(--muted);
@@ -198,10 +233,15 @@ main {
 }
 
 .article-list .article-meta {
-  margin-top: 0.75rem;
+  margin: 0.75rem 0 0;
 }
 
 .article-meta__authors::before {
+  margin-right: 0.45rem;
+  content: "·";
+}
+
+.article-meta__updated::before {
   margin-right: 0.45rem;
   content: "·";
 }
@@ -294,5 +334,19 @@ main {
 
   .profile__copy {
     grid-row: 2;
+  }
+
+  .article-pill {
+    border-radius: 1.25rem;
+  }
+
+  .article-pill:focus-visible {
+    border-radius: 1.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .article-pill {
+    transition: none;
   }
 }

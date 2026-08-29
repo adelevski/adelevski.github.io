@@ -8,7 +8,6 @@ topics: []
 draft: true
 ---
 
-Replace this file with a substantive technical note before setting `draft` to `false`.
+Replace this file with the finished article before setting `draft` to `false`.
 
-Useful sections may include the problem, constraints, alternatives, experiments, failures,
-measurements, tradeoffs, and conclusions.
+Use only the structure the subject needs. Keep the writing clear, personal, and concise.

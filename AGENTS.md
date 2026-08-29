@@ -10,5 +10,7 @@
   logo or presenting this site as a snowball property.
 - Treat `/writing/` as Nas Delevski's personal writing index. Store article
   authors as a list so one or multiple contributors use the same layout.
+- Keep the Writing index aligned with the shared publishing outcome described in
+  `docs/publishing-surface.md` while preserving personal content ownership.
 - Never commit working drafts to this public repository. Add writing only after
   explicit publication approval.
