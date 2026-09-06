@@ -21,10 +21,8 @@ content.
 - Treat the `authors` list as the article's authors. On both the index and
   article page, render only the formatted names, without a role label. Do not
   add an AI writer or author credit to individual posts.
-- Keep the site-wide AI-production credit in the footer, using exactly
-  `Built by AI agents` without qualifiers. The personal footer contains only
-  that statement; snowball may keep its About, Licensing, and Source links
-  alongside it.
+- Do not add AI-builder labels or production credits. The personal site has no
+  footer; snowball keeps its About and Source links in the footer.
 
 Treat this document as the shared outcome contract. Keep the small implementations
 local to each repository; introduce a shared package only if repeated coordinated

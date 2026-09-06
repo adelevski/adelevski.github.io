@@ -47,6 +47,21 @@ body {
   border: 0;
 }
 
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 10;
+  padding: 0.6rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--accent);
+  transform: translateY(-200%);
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
 a {
   color: inherit;
   text-decoration-color: #59676c;
@@ -87,8 +102,7 @@ p {
 }
 
 .site-header,
-main,
-.site-footer {
+main {
   width: min(100% - 2.5rem, 82rem);
   margin-inline: auto;
 }
@@ -131,17 +145,6 @@ nav a[aria-current="page"] {
 main {
   flex: 1;
   padding-block: clamp(4.5rem, 10vw, 9rem);
-}
-
-.site-footer {
-  padding-block: 1.25rem 2rem;
-  border-top: 1px solid var(--line);
-}
-
-.site-provenance {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.88rem;
 }
 
 .home-page {
