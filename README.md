@@ -28,8 +28,8 @@ npm run verify       # all of the above
 
 - Keep the homepage concise and personal.
 - Add writing to `src/content/writing/` only after it is ready to publish.
-- List every article director in `authors`; the same field supports one or
-  multiple people and renders as `Directed by ...`.
+- List every article author in `authors`; the same field supports one or
+  multiple people and renders their names without a role label.
 - Keep AI-production credit site-wide as the footer text `Built by AI agents`,
   not as an article-writing credit.
 - Keep working drafts outside this public repository, then copy them in only

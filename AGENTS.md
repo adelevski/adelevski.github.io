@@ -9,8 +9,8 @@
 - Preserve the dark visual language shared with snowball without reusing its
   logo or presenting this site as a snowball property.
 - Treat `/writing/` as Nas Delevski's personal writing index. Store article
-  directors in `authors` as a list and render them as `Directed by ...`; do not
-  add an AI writer or author credit to individual posts.
+  authors in `authors` as a list and render only their names on index and
+  article pages; do not add an AI writer or author credit to individual posts.
 - Keep the personal footer limited to the exact provenance text
   `Built by AI agents`, with no footer navigation.
 - Keep the Writing index aligned with the shared publishing outcome described in
