@@ -2,6 +2,7 @@
 title: A New Kind of Artist
 summary: Software as a medium for useful, beautiful digital public goods—and the taste, judgment, and responsibility that gives the work meaning.
 publishedDate: 2026-08-29
+updatedDate: 2026-09-07
 authors:
   - Nas Delevski
 topics: []
@@ -12,7 +13,7 @@ Through snowball, I feel as though I am becoming a kind of artist—but perhaps 
 
 Software is becoming my medium. Instead of producing paintings, music, or stories, I want to produce useful and beautiful digital public goods: tools shaped by my own opinions, judgment, and taste, then made available for other people to use, modify, and build upon.
 
-These creations are digital because they exist through computers and phones. They are public because I intend to release them under permissive open-source licenses such as Apache 2.0, allowing people to freely use, modify, redistribute, and even commercialize them within the license’s conditions. They are goods because they provide genuine utility. People can use them to solve problems, improve their lives, or pursue purposes I may never have anticipated.
+These creations are digital because they exist through computers and phones. They are public because I intend to release them under the MIT License, allowing people to freely use, modify, redistribute, and even commercialize them within the license’s conditions. They are goods because they provide genuine utility. People can use them to solve problems, improve their lives, or pursue purposes I may never have anticipated.
 
 This resembles art more than I initially realized. Traditional artists make subjective choices about what deserves to exist and how it should feel. Their work reflects a particular vision of the world. Not everyone will appreciate the result, but some people may connect with it deeply.
 
