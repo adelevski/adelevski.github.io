@@ -1,11 +1,14 @@
 ---
 title: A New Kind of Artist
 summary: Software as a medium for useful, beautiful digital public goods—and the taste, judgment, and responsibility that gives the work meaning.
-publishedDate: 2026-08-29
-updatedDate: 2026-09-07
+destination: personal
+publishedDate: "2026-08-29"
+updatedDate: "2026-09-07"
 authors:
   - Nas Delevski
-topics: []
+topics:
+  - creativity
+  - software-design
 draft: false
 ---
 

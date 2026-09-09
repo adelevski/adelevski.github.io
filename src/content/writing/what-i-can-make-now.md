@@ -1,10 +1,14 @@
 ---
 title: What I Can Make Now
 summary: How AI is changing what I build, what I learn, and what I want to share.
-publishedDate: 2026-09-05
+destination: personal
+publishedDate: "2026-09-05"
 authors:
   - Nas Delevski
-topics: []
+topics:
+  - ai
+  - learning
+  - public-goods
 draft: false
 ---
 

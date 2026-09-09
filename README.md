@@ -32,6 +32,11 @@ npm run verify       # all of the above
   multiple people and renders their names without a role label.
 - Keep working drafts outside this public repository, then copy them in only
   after publication approval.
+- Use the single template in the private writing workspace. Both sites accept
+  the same article properties; this site requires `destination: personal`.
+  Copy approved Markdown unchanged, keeping the filename as its URL slug.
+- Keep `authors` and `topics` as lists. `publishedDate` is required;
+  `updatedDate` and `project` are optional. Project metadata is not rendered here.
 - Set `draft: true` to exclude an article from generated pages and RSS.
 - Keep snowball projects, principles, and organizational material canonical at
   [snowball-projects.github.io](https://snowball-projects.github.io).

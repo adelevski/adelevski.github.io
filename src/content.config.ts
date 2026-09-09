@@ -10,10 +10,12 @@ const writing = defineCollection({
     .object({
       title: nonemptyText,
       summary: nonemptyText,
+      destination: z.literal("personal"),
       publishedDate: z.coerce.date(),
       updatedDate: z.coerce.date().optional(),
       authors: z.array(nonemptyText).min(1),
       topics: z.array(nonemptyText).default([]),
+      project: nonemptyText.optional(),
       draft: z.boolean().default(false),
     })
     .strict()
