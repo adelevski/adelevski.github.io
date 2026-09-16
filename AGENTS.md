@@ -29,8 +29,8 @@
 - Keep the personal site free of footer navigation, AI-builder labels, and
   production credits. Do not add AI writer or author credits to posts.
 - `/writing/` is the personal writing index. Store article `authors` as a nonempty
-  list and render names only. Follow `docs/publishing-surface.md` while preserving
-  personal content ownership and a local implementation.
+  list and render names only. Keep the index a plain reverse-chronological stack
+  with no page title or promotional copy, and keep the implementation local.
 - Keep drafts outside this public repository. `draft: true` controls rendered
   output, not source privacy. Publication requires user authorization; preserve
   slugs and `publishedDate`, and set `updatedDate` for approved revisions.
