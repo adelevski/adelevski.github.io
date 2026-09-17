@@ -52,3 +52,8 @@ deployment → Source** must be set to **GitHub Actions**.
 
 The configuration targets the user site at `https://adelevski.github.io`, so no
 Astro `base` path is required.
+
+## License
+
+The site's source is licensed under the [MIT License](LICENSE). The articles under
+`src/content/writing/` and the portrait are not licensed for reuse.
